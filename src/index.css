@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Hide desktop scrollbar width inside mobile viewport so left & right padding stay 100% symmetrical */
+.mobile-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobile-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 3.2s ease-in-out infinite;
+}
